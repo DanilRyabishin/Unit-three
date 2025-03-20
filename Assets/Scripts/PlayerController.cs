@@ -7,6 +7,7 @@ namespace golf
     public class PlayerController : MonoBehaviour
     {
         public Spawner stone;
+        public CloudController cloudController;
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.X))
@@ -15,6 +16,7 @@ namespace golf
                 stone.Spawn();
             }
             if (Input.GetKeyDown(KeyCode.Z))
+                cloudController.Awake();
             {
                 Debug.Log("Z key down");
             }
