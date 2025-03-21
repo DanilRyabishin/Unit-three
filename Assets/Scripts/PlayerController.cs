@@ -8,10 +8,12 @@ namespace golf
     {
         public Spawner stone;
         public CloudController cloudController;
+        public List<RefreshItem> villagers;
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
+
                 Debug.Log("X key down");
                 stone.Spawn();
             }
@@ -26,6 +28,10 @@ namespace golf
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Space key down");
+                foreach(var villager in villagers)
+                {
+                    villager.Changetool();
+                }
             }
         }
 
