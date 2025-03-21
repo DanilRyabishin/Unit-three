@@ -75,7 +75,7 @@ Material:
     - _Glossiness: 0.235
     - _GlossyReflections: 1
     - _InvFade: 1
-    - _MainAlpha: 0.673
+    - _MainAlpha: 0.885
     - _Metallic: 0.229
     - _Mode: 0
     - _OcclusionStrength: 1
