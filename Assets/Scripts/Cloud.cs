@@ -6,19 +6,19 @@ namespace golf
 {
     public class Cloud : MonoBehaviour
     {
-        [SerializeField] private ParticleSystem particleSystem;
+        [SerializeField] private ParticleSystem m_particleSystem;
 
         public void PlayFX()
         {
-            particleSystem.Play();
+            m_particleSystem.Play();
         }
         public void StopFX()
         {
-            particleSystem.Stop();
+            m_particleSystem.Stop();
         }
         public void Start()
         {
-            particleSystem.Stop();
+            m_particleSystem.Stop();
         }
     }
 }

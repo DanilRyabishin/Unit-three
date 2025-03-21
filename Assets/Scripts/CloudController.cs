@@ -9,19 +9,25 @@ public class CloudController : MonoBehaviour
         private int m_targInd = 0;
         private bool m_moved = false;
         public float moveSpd = 10f;
-        public Transform cloud;
+        public Cloud cloud;
         public Transform[] targests;
-        public void Awake()
+
+        public void Action()
         {
             Debug.Log("Cloud", this);
 
-            if (m_moved);
+            if (m_moved)
             {
                 return;
             }
             m_moved = true;
+            cloud.StopFX();
             m_targInd++;
-            if (m_targInd >= targests.Length) { m_targInd = 0; }
+
+            if (m_targInd >= targests.Length) 
+            { 
+                m_targInd = 0; 
+            }
         }
         public void Update()
         {
@@ -31,19 +37,20 @@ public class CloudController : MonoBehaviour
             }
 
             Transform target = targests[m_targInd];
-            Vector3 targetPos = new Vector3(target.position.x, cloud.position.y, target.position.z);
-            Vector3 offset = (targetPos - cloud.position).normalized * Time.deltaTime * moveSpd;
+            Vector3 targetPos = new Vector3(target.position.x, cloud.transform.position.y, target.position.z);
+            Vector3 offset = (targetPos - cloud.transform.position).normalized * Time.deltaTime * moveSpd;
+            float distance = Vector3.Distance(cloud.transform.position, targetPos);
 
-            if (Vector3.Distance(transform.position, targetPos) < offset.magnitude)
+            if (distance < offset.magnitude)
             {
-                cloud.position = targetPos;
+                cloud.transform.position = targetPos;
                 m_moved = false;
+                cloud.PlayFX();
             }
             else
             {
-                cloud.Translate(offset);
+                cloud.transform.Translate(offset);
             }
         }
     }
-
 }

@@ -255,6 +255,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2916151948399678901, guid: 0577306f947ebac4486c16bda41798b1, type: 3}
   m_PrefabInstance: {fileID: 6889717}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &6889719 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 350799694411842334, guid: 0577306f947ebac4486c16bda41798b1, type: 3}
+  m_PrefabInstance: {fileID: 6889717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &48693230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6071,6 +6076,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2916151948399678901, guid: 0577306f947ebac4486c16bda41798b1, type: 3}
   m_PrefabInstance: {fileID: 648544552}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &648544554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 350799694411842334, guid: 0577306f947ebac4486c16bda41798b1, type: 3}
+  m_PrefabInstance: {fileID: 648544552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &648900220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6736,6 +6746,11 @@ PrefabInstance:
 --- !u!4 &659539012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5725985568212081955, guid: 210ea86c955a5db419b0ad0a777d2bbe, type: 3}
+  m_PrefabInstance: {fileID: 659539011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &659539013 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 235310315609697696, guid: 210ea86c955a5db419b0ad0a777d2bbe, type: 3}
   m_PrefabInstance: {fileID: 659539011}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &674816976
@@ -7909,8 +7924,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpd: 10
-  cloud: {fileID: 0}
-  targests: []
+  cloud: {fileID: 1022963116}
+  targests:
+  - {fileID: 1367782378}
+  - {fileID: 1659989085}
+  - {fileID: 6889718}
+  - {fileID: 648544553}
+  - {fileID: 1146574077}
+  - {fileID: 1146574078}
+  - {fileID: 1659989086}
+  - {fileID: 885835524}
+  - {fileID: 659539012}
+  - {fileID: 659539013}
+  - {fileID: 6889719}
+  - {fileID: 648544554}
 --- !u!4 &798299883
 Transform:
   m_ObjectHideFlags: 0
@@ -7919,7 +7946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798299881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.30563, y: 46.33998, z: 28.058912}
+  m_LocalPosition: {x: 71.30563, y: 50.31, z: 19.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9887,7 +9914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4241627824473718, guid: 89183a5c31b1c1b4f89c7e21d8ca741c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.7955
+      value: 2.1086352
       objectReference: {fileID: 0}
     - target: {fileID: 4241627824473718, guid: 89183a5c31b1c1b4f89c7e21d8ca741c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9956,7 +9983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7787b101553f7ee488f334de907b33bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 0}
+  m_particleSystem: {fileID: 1911684092}
 --- !u!1001 &1024197818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11810,6 +11837,11 @@ PrefabInstance:
 --- !u!4 &1146574077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7848397493806695768, guid: c86589473eb08e040b9078d832a2d4b3, type: 3}
+  m_PrefabInstance: {fileID: 1146574076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1146574078 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8435645324878625090, guid: c86589473eb08e040b9078d832a2d4b3, type: 3}
   m_PrefabInstance: {fileID: 1146574076}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1146700452
@@ -15974,6 +16006,11 @@ PrefabInstance:
 --- !u!4 &1659989085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 254373355089696141, guid: 8636a621b3ea3fb4a902553949b6adab, type: 3}
+  m_PrefabInstance: {fileID: 1659989084}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1659989086 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5859693740196492732, guid: 8636a621b3ea3fb4a902553949b6adab, type: 3}
   m_PrefabInstance: {fileID: 1659989084}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1680027316

@@ -15,11 +15,14 @@ namespace golf
                 Debug.Log("X key down");
                 stone.Spawn();
             }
+
             if (Input.GetKeyDown(KeyCode.Z))
-                cloudController.Awake();
+                
             {
+                cloudController.Action();
                 Debug.Log("Z key down");
             }
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Space key down");
