@@ -2,23 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace golf
+namespace Golf
 { 
 
 public class Spawner : MonoBehaviour
 {
-        public GameObject stone;
+        public GameObject[] golf_ball;
 
         public void Spawn()
         {
             Debug.Log("Spawn");
 
-            if (stone == null)
+            var prefab = getRandomPrefab();
+
+            if (prefab == null)
             {
                 Debug.LogError("Spawner - stone == null");
                 return;
             }
-            Instantiate(stone, transform.position, Quaternion.identity);
+            Instantiate(prefab, transform.position, Quaternion.identity);
+          
+        }
+        private GameObject getRandomPrefab()
+        {
+            if (golf_ball.Length == 0)
+            {
+                Debug.Log("stones");
+                return null;
+            }
+
+            int index = Random.Range(0, golf_ball.Length);
+            return golf_ball[index];
         }
     }
 }
