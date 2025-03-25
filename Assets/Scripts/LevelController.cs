@@ -8,7 +8,7 @@ namespace Golf
 public class LevelController : MonoBehaviour
 {
         public Spawner spawner;
-        public float delay = 0.7f;
+        public float delay = 1.4f;
         public bool gameOver = false;
 
         private void Start()
