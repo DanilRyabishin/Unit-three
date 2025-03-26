@@ -4,27 +4,41 @@ using UnityEngine;
 
 namespace Golf
 {
-     
-public class LevelController : MonoBehaviour
-{
+
+    public class LevelController : MonoBehaviour
+    {
         public Spawner spawner;
-        public float delay = 1.4f;
-        public bool gameOver = false;
+        private float delay = 2.5f;        
+        private float m_lastSpawnedTime = 0;
 
         private void Start()
         {
-            StartCoroutine(startStoneProc());
+            m_lastSpawnedTime = Time.time;
+            Ball.onCollisionBall += GameOver;
+        }
+        private void OnEnable()
+        {           
+            Ball.onCollisionBall += GameOver;
+        }
+        private void OnDisable()
+        {           
+            Ball.onCollisionBall -= GameOver;
         }
 
-        private IEnumerator startStoneProc()
+        private void GameOver()
         {
-            do
-            {
-                yield return new WaitForSeconds(delay);
-                spawner.Spawn();
-            }
-            while (!gameOver);
+            Debug.Log("Конец игры, пес");
+            enabled = false;
+        }
+        
+        private void Update()
+        {          
+                if (Time.time >= m_lastSpawnedTime + delay)
+                {
+                    spawner.Spawn();
+                    m_lastSpawnedTime = Time.time;
+                }
+            
         }
     }
-
 }
