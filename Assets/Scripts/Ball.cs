@@ -14,7 +14,7 @@ public class Ball : MonoBehaviour
             {
                 if (!ball.isAffect)
                 {
-                    onCollisionBall?.Invoke();
+                    GameEvents.CollisionBallInvoke(collision);
                 }
             }
         }

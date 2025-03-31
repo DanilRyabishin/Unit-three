@@ -17,12 +17,17 @@ namespace Golf
         private void Update()
         {
             m_lastPos = helper.position;
-            m_isDown = Input.GetMouseButton(0);
+           
             Quaternion rot = stick.localRotation;
             Quaternion toRot = Quaternion.Euler(m_isDown ? range : -range, 0, 0);
             rot = Quaternion.RotateTowards(rot, toRot, speed * Time.deltaTime);
 
             stick.localRotation = rot;
+        }
+
+        public void SetDown(bool value)
+        {
+            m_isDown = value;
         }
         public void OnCollisionStick(Collider collider)
         {
@@ -31,9 +36,10 @@ namespace Golf
                 var dir = (helper.position - m_lastPos).normalized;
                 golf_ball.AddForce(dir * power, ForceMode.Impulse);
 
-                if (collider.TryGetComponent(out Ball ball))
+                if (collider.TryGetComponent(out Ball ball) && !ball.isAffect)
                 {
                     ball.isAffect = true;
+                    GameEvents.StickHit();
                 }
             }
 
