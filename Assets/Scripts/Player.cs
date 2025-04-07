@@ -22,12 +22,11 @@ namespace Golf
             Quaternion toRot = Quaternion.Euler(m_isDown ? range : -range, 0, 0);
             rot = Quaternion.RotateTowards(rot, toRot, speed * Time.deltaTime);
             stick.localRotation = rot;
-        }
-
+        }             
         public void SetDown(bool value)
         {
             m_isDown = value;
-            Debug.Log("SertDown Call: m_isDown = " + m_isDown);
+            //Debug.Log("SertDown Call: m_isDown = " + m_isDown);
         }
         public void OnCollisionStick(Collider collider)
         {
