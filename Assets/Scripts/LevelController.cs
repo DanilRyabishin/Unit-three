@@ -18,6 +18,9 @@ namespace Golf
         public int score = 0;
         public int highScore = 0;
 
+        private List<GameObject> m_ball = new List<GameObject>(16);
+
+
         private void Start()
         {
             m_lastSpawnedTime = Time.time;
@@ -33,12 +36,11 @@ namespace Golf
 
         private void OnEnable()
         {           
-            GameEvents.onCollisionBall += GameOver;
             GameEvents.onStickHit += OnStickHit;
+            score = 0;
         }
         private void OnDisable()
         {           
-            GameEvents.onCollisionBall -= GameOver;
             GameEvents.onStickHit -= OnStickHit;
         }
 
@@ -48,6 +50,14 @@ namespace Golf
             enabled = false;
         }
 
+        public void ClearBall()
+        {
+            foreach (var ball in m_ball)
+            {
+                Destroy(ball);
+            }
+            m_ball.Clear();
+        }
         public void RefreshDelay()
         {
             m_delay = UnityEngine.Random.Range(delayMin, delayMax);
@@ -58,7 +68,8 @@ namespace Golf
         {          
                 if (Time.time >= m_lastSpawnedTime + m_delay)
                 {
-                    spawner.Spawn();
+                    var ball = spawner.Spawn();
+                    m_ball.Add(ball);
                     m_lastSpawnedTime = Time.time;
                 RefreshDelay();
                 }

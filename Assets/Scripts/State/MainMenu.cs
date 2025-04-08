@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 namespace Golf
 {
-    public class MainMenu : MonoBehaviour
+    public class MainMenu : GameState
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public GameState gamePlay;
+        public LevelController levelController;
+        public TMP_Text scoreText;
 
-        // Update is called once per frame
-        void Update()
+        public void PlayGame()
         {
-        
+            Exit();
+            gamePlay.Enter();
+        }
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            scoreText.text = $"HScore : {levelController.highScore}";
         }
     }
 }

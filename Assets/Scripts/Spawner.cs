@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
 {
         public GameObject[] golf_ball;
 
-        public void Spawn()
+        public GameObject Spawn()
         {
             Debug.Log("Spawn");
 
@@ -18,9 +18,9 @@ public class Spawner : MonoBehaviour
             if (prefab == null)
             {
                 Debug.LogError("Spawner - stone == null");
-                return;
+                return null;
             }
-            Instantiate(prefab, transform.position, Quaternion.identity);
+            return Instantiate(prefab, transform.position, Quaternion.identity);
           
         }
         private GameObject getRandomPrefab()
